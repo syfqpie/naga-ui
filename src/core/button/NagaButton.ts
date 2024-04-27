@@ -121,3 +121,10 @@ export class NagaButton extends LitElement {
 		`;
 	}
 }
+
+declare global {
+	interface HTMLElementTagNameMap {
+	  'naga-button': NagaButton;
+	}
+
+  }

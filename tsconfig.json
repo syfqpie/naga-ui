@@ -16,7 +16,8 @@
     "rootDir": "./",
     "declaration": true,
     "incremental": true,
-		"declarationMap": true
+		"declarationMap": true,
+		"useDefineForClassFields": false
   },
   "include": ["**/*.ts"]
 }
