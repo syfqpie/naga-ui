@@ -6,10 +6,10 @@
 	"version": "0.0.1-alpha2",
 	"private": false,
 	"type": "module",
-	"main": "dist/src/index.js",
-	"module": "dist/src/index.js",
+	"main": "dist/index.js",
+	"module": "dist/index.js",
 	"exports": {
-		".": "./dist/src/index.js"
+		".": "./dist/index.js"
 	},
 	"types": "index.d.ts",
 	"scripts": {
