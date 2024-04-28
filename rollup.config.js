@@ -1,12 +1,36 @@
-import { babel } from '@rollup/plugin-babel';
+import summary from 'rollup-plugin-summary';
+import { terser } from 'rollup-plugin-terser';
+import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
 
-const config = {
-	input: 'dist/src/index.js',
+export default {
+	input: 'dist/index.js',
 	output: {
-		dir: 'output',
-		format: 'es'
+		file: 'dist/index.bundled.js',
+		format: 'esm',
 	},
-	plugins: [babel({ babelHelpers: 'bundled' })]
+	onwarn(warning) {
+		if (warning.code !== 'THIS_IS_UNDEFINED') {
+			console.error(`(!) ${warning.message}`);
+		}
+	},
+	plugins: [
+		replace({ 'Reflect.decorate': 'undefined' }),
+		resolve(),
+		/**
+		 * This minification setup serves the static site generation.
+		 * For bundling and minification, check the README.md file.
+		 */
+		terser({
+			ecma: 2021,
+			module: true,
+			warnings: true,
+			mangle: {
+				properties: {
+					regex: /^__/,
+				},
+			},
+		}),
+		summary(),
+	],
 };
-
-export default config;

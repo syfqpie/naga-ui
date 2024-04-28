@@ -18,7 +18,7 @@ import { Size } from '../../types/common'
  */
 @customElement('naga-button')
 export class NagaButton extends LitElement {
-	static styles = css`
+	static override styles = css`
 		:host {
 			--def-naga-btn-color: #FFFFFF;
 			--def-naga-btn-color-hovered: #FFFFFF;
@@ -110,7 +110,7 @@ export class NagaButton extends LitElement {
 		return cls
 	}
 
-	render() {
+	override render() {
 		return html`
 			<button
 				class="naga-btn ${ this.getCls() }"
@@ -126,5 +126,4 @@ declare global {
 	interface HTMLElementTagNameMap {
 	  'naga-button': NagaButton;
 	}
-
-  }
+}

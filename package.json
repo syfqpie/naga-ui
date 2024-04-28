@@ -15,7 +15,7 @@
 	"scripts": {
 		"analyze": "cem analyze --litelement",
 		"start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
-		"build": "tsc && npm run analyze -- --exclude dist",
+		"build": "tsc && npm run analyze -- --exclude dist && rollup -c rollup.config.js",
 		"prepublish": "tsc && npm run analyze -- --exclude dist",
 		"test": "tsc && wtr --coverage --node-resolve --playwright --browsers chromium firefox webkit",
 		"test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch --coverage --node-resolve --playwright --browsers chromium firefox webkit\"",
@@ -28,6 +28,8 @@
 	"devDependencies": {
 		"@custom-elements-manifest/analyzer": "^0.9.8",
 		"@open-wc/testing": "^3.1.6",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-replace": "^5.0.5",
 		"@types/mocha": "^10.0.6",
 		"@web/dev-server": "^0.4.4",
 		"@web/test-runner": "^0.18.1",
@@ -36,6 +38,9 @@
 		"deepmerge": "^4.3.1",
 		"es-dev-server": "^2.1.0",
 		"rimraf": "^5.0.5",
+		"rollup": "^4.17.0",
+		"rollup-plugin-summary": "^2.0.0",
+		"rollup-plugin-terser": "^7.0.2",
 		"tslib": "^2.3.1",
 		"typescript": "^5.2.2"
 	},
