@@ -3,7 +3,7 @@
 	"description": "🐲 reusable web components",
 	"license": "MIT",
 	"author": "naga-ui",
-	"version": "0.0.1-alpha4",
+	"version": "0.0.1-alpha5",
 	"private": false,
 	"type": "module",
 	"main": "./build/bundle.js",
@@ -18,9 +18,7 @@
 		"build": "tsc && npm run analyze -- --exclude dist && rollup -c rollup.config.js",
 		"prepublish": "tsc && npm run analyze -- --exclude dist",
 		"test": "tsc && wtr --coverage --node-resolve --playwright --browsers chromium firefox webkit",
-		"test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch --coverage --node-resolve --playwright --browsers chromium firefox webkit\"",
-		"storybook": "tsc && npm run analyze -- --exclude dist && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
-		"storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook"
+		"test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch --coverage --node-resolve --playwright --browsers chromium firefox webkit\""
 	},
 	"dependencies": {
 		"lit": "^3.1.2"

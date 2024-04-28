@@ -2859,9 +2859,9 @@ es-module-lexer@^0.9.3:
   integrity sha512-1HQ2M2sPtxwnvOvT1ZClHyQDiggdNjURWpY2we6aMKCQiUVxTmVs2UYPLIrD84sS+kMdUwfBSylbJPwNnBrnHQ==
 
 es-module-lexer@^1.0.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-1.5.0.tgz#4878fee3789ad99e065f975fdd3c645529ff0236"
-  integrity sha512-pqrTKmwEIgafsYZAGw9kszYzmagcE/n4dbgwGWLEXg7J4QFJVQRBld8j3Q3GNez79jzxZshq0bcT962QHOghjw==
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-1.5.2.tgz#00b423304f2500ac59359cc9b6844951f372d497"
+  integrity sha512-l60ETUTmLqbVbVHv1J4/qj+M8nq7AwMzEcg3kmJDt9dCNrTk+yHcYFf/Kw75pMDwd9mPcIGCG5LcS20SxYRzFA==
 
 es-module-shims@^0.4.6:
   version "0.4.7"
@@ -2869,9 +2869,9 @@ es-module-shims@^0.4.6:
   integrity sha512-0LTiSQoPWwdcaTVIQXhGlaDwTneD0g9/tnH1PNs3zHFFH+xoCeJclDM3rQeqF9nurXPfMKm3l9+kfPRa5VpbKg==
 
 es-module-shims@^1.4.1:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/es-module-shims/-/es-module-shims-1.9.0.tgz#a607cb365d3f2a6eea2546df885dd41b9305bd5e"
-  integrity sha512-R4lwSjeELpw1Bzu2a7k3nqpxyPMfiXRq7ewqFhydV/zcYgt4b4VZzNonZu/SotJyb4ibEjuqN/OIM4wQCAGmwA==
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/es-module-shims/-/es-module-shims-1.10.0.tgz#545eac89923052747343f354efda1de78dfadf1a"
+  integrity sha512-3PmuShQBd9d8pulTFx6L7HKgncnZ1oeSSbrEfnUasb3Tv974BAvyFtW1HLPJSkh5fCaU9JNZbBzPdbxSwg2zqA==
 
 escalade@^3.1.1:
   version "3.1.2"
@@ -4585,9 +4585,9 @@ supports-preserve-symlinks-flag@^1.0.0:
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 systemjs@^6.3.1, systemjs@^6.8.3:
-  version "6.14.3"
-  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-6.14.3.tgz#c1d6e4ff5f9ff7106e5bb3d451360b1a066bde8a"
-  integrity sha512-hQv45irdhXudAOr8r6SVSpJSGtogdGZUbJBRKCE5nsIS7tsxxvnIHqT4IOPWj+P+HcSzeWzHlGCGpmhPDIKe+w==
+  version "6.15.1"
+  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-6.15.1.tgz#74175b6810e27a79e1177d21db5f0e3057118cea"
+  integrity sha512-Nk8c4lXvMB98MtbmjX7JwJRgJOL8fluecYCfCeYBznwmpOs8Bf15hLM6z4z71EDAhQVrQrI+wt1aLWSXZq+hXA==
 
 table-layout@^1.0.2:
   version "1.0.2"
