@@ -3,7 +3,7 @@
 	"description": "🐲 reusable web components",
 	"license": "MIT",
 	"author": "naga-ui",
-	"version": "0.0.1-alpha1",
+	"version": "0.0.1-alpha2",
 	"private": false,
 	"type": "module",
 	"main": "dist/src/index.js",
