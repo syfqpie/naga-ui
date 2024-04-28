@@ -87,10 +87,14 @@ export class NagaButton extends LitElement {
 		}
   	`;
 
-	@property({ type: String }) size: Size = 'md'
-	@property({ type: Boolean }) isFull: boolean = false
-	@property({ type: Boolean }) disabled: boolean = false
-	@property({ attribute: false }) onClick?: ((e: Event) => void | undefined)
+	@property({ type: String })
+	accessor size: Size = 'md'
+	@property({ type: Boolean })
+	accessor isFull: boolean = false
+	@property({ type: Boolean })
+	accessor disabled: boolean = false
+	@property({ attribute: false })
+	accessor onClick: ((e: Event) => void) | undefined = undefined
 
 	getCls() {
 		let cls = ''
