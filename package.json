@@ -6,14 +6,14 @@
 	"version": "0.0.1-alpha4",
 	"private": false,
 	"type": "module",
-	"main": "dist/index.js",
-	"module": "dist/index.js",
+	"main": "./build/bundle.js",
+	"module": "./build/bundle.js",
 	"exports": {
-		".": "./dist/index.js"
+		".": "./build/bundle.js"
 	},
-	"types": "./dist/index.d.ts",
+	"types": "./build/bundle.d.ts",
 	"scripts": {
-		"analyze": "cem analyze --litelement",
+		"analyze": "cem analyze --litelement --packagejson",
 		"start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
 		"build": "tsc && npm run analyze -- --exclude dist && rollup -c rollup.config.js",
 		"prepublish": "tsc && npm run analyze -- --exclude dist",
@@ -30,6 +30,7 @@
 		"@open-wc/testing": "^3.1.6",
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-replace": "^5.0.5",
+		"@rollup/plugin-typescript": "^11.1.6",
 		"@types/mocha": "^10.0.6",
 		"@web/dev-server": "^0.4.4",
 		"@web/test-runner": "^0.18.1",
@@ -39,8 +40,8 @@
 		"es-dev-server": "^2.1.0",
 		"rimraf": "^5.0.5",
 		"rollup": "^4.17.0",
+		"rollup-plugin-dts": "^6.1.0",
 		"rollup-plugin-summary": "^2.0.0",
-		"rollup-plugin-terser": "^7.0.2",
 		"tslib": "^2.3.1",
 		"typescript": "^5.2.2"
 	},

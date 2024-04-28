@@ -87,12 +87,16 @@ export class NagaButton extends LitElement {
 		}
   	`;
 
+	/** @property {@link Size} size - size of button - the default is `md` */
 	@property({ type: String })
 	accessor size: Size = 'md'
+	/** {Boolean} isFull - set true if button should be full width - the default is false */
 	@property({ type: Boolean })
 	accessor isFull: boolean = false
+	/** @property {Boolean} disabled - set true if button is in disabled state - the default is false */
 	@property({ type: Boolean })
 	accessor disabled: boolean = false
+	/** @property {(e: Event) => void} onClick - button callback when clicked */
 	@property({ attribute: false })
 	accessor onClick: ((e: Event) => void) | undefined = undefined
 
