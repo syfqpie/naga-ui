@@ -11,7 +11,7 @@
 	"exports": {
 		".": "./dist/index.js"
 	},
-	"types": "index.d.ts",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"analyze": "cem analyze --litelement",
 		"start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
