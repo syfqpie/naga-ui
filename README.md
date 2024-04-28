@@ -21,6 +21,9 @@ yarn run test:watch
 To run a local development server that serves the basic demo located in `demo/index.html`
 
 ```bash
+# install pre-commit if you don't have it
+pre-commit install --hook-type commit-msg
+
 # install deps
 yarn install
 
