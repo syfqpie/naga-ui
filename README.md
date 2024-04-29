@@ -1,20 +1,8 @@
-# 🐲 \<naga-ui> 
+# 🐲 \<naga-ui>
 
-A webcomponent made for fun and follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+![Static Badge](https://img.shields.io/badge/work_in_progress-yellow) ![NPM Version](https://img.shields.io/npm/v/naga-ui)
 
-## Testing with Web Test Runner
-
-To execute a single test run:
-
-```bash
-yarn run test
-```
-
-To run the tests in interactive watch mode run:
-
-```bash
-yarn run test:watch
-```
+A webcomponent made for fun and follows the [open-wc](https://github.com/open-wc/open-wc) recommendation. Created using Lit.
 
 ## Development
 
@@ -29,4 +17,18 @@ yarn install
 
 # start local development server
 yarn start
+```
+
+## Testing with Web Test Runner
+
+To execute a single test run:
+
+```bash
+yarn run test
+```
+
+To run the tests in interactive watch mode run:
+
+```bash
+yarn run test:watch
 ```

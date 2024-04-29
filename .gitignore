@@ -24,3 +24,7 @@
 storybook-static
 custom-elements.json
 ._misc
+
+# vitepress
+docs/.vitepress/dist
+docs/.vitepress/cache
