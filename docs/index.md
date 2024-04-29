@@ -8,6 +8,6 @@ hero:
   actions:
     - theme: brand
       text: Start now
-      link: /markdown-examples
+      link: /getting-started/index
 ---
 
