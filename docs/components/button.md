@@ -9,7 +9,11 @@ import { NagaButton } from 'naga-ui'
 ```
 
 <script setup>
-import '../../build/bundle.js'
+// import '../../build/bundle.js'
+import { onMounted } from 'vue'
+onMounted(async() => {
+	await import('../../build/bundle.js')
+})
 </script>
 
 ## Basic usage
@@ -170,4 +174,19 @@ We have a callback props for click event
 <naga-button :onClick="doClickEvent()">
 	Hello world
 </naga-button>
+```
+
+### Changing the styles
+
+We can change the button styling by overriding these css variables
+
+```css
+:root {
+	--naga-btn-color: #FFFFFF;
+	--naga-btn-color-hovered: #FFFFFF;
+	--naga-btn-bg-color: #1F2937;
+	--naga-btn-bg-color-hovered: #374151;
+	--naga-btn-border-color: #4B5563;
+	--naga-btn-bg-color-active: var(--naga-btn-border-color);
+}
 ```
