@@ -38,51 +38,51 @@ export class NagaButton extends LitElement {
 			--def-naga-btn-p-lg: 10px 26px;
 
 			display: block;
+		}
 
-			.naga-btn {
-				font-size: var(--def-naga-txt-md);
-				padding: var(--def-naga-btn-p-md);
-				color: var(--naga-btn-color, var(--def-naga-btn-color));
-				background-color: var(--naga-btn-bg-color, var(--def-naga-btn-bg-color));
-				border: 1px solid var(--naga-btn-border-color, var(--def-naga-btn-border-color));
-				border-radius: 9999px;
-				cursor: pointer;
+		.naga-btn {
+			font-size: var(--def-naga-txt-md);
+			padding: var(--def-naga-btn-p-md);
+			color: var(--naga-btn-color, var(--def-naga-btn-color));
+			background-color: var(--naga-btn-bg-color, var(--def-naga-btn-bg-color));
+			border: 1px solid var(--naga-btn-border-color, var(--def-naga-btn-border-color));
+			border-radius: 9999px;
+			cursor: pointer;
 
-				&:not(:disabled):hover {
-					color: var(--naga-btn-color-hovered, var(--def-naga-btn-color-hovered));
-					background-color: var(--naga-btn-bg-color-hovered, var(--def-naga-btn-bg-color-hovered));
-				}
+			&:not(:disabled):hover {
+				color: var(--naga-btn-color-hovered, var(--def-naga-btn-color-hovered));
+				background-color: var(--naga-btn-bg-color-hovered, var(--def-naga-btn-bg-color-hovered));
+			}
 
-				&:not(:disabled):active {
-					color: var(--naga-btn-color-hovered, var(--def-naga-btn-color-hovered));
-					background-color: var(--naga-btn-bg-color-active, var(--def-naga-btn-bg-color-active));
-				}
+			&:not(:disabled):active {
+				color: var(--naga-btn-color-hovered, var(--def-naga-btn-color-hovered));
+				background-color: var(--naga-btn-bg-color-active, var(--def-naga-btn-bg-color-active));
+			}
 
-				&:disabled {
-					color: #030712;
-					background-color: #6b7280;
-					cursor: not-allowed;
-					opacity: 0.5;
-				}
+			&:disabled {
+				color: #030712;
+				background-color: #6b7280;
+				cursor: not-allowed;
+				opacity: 0.5;
+			}
 
-				&.naga-btn-xs {
-					font-size: var(--def-naga-txt-xs);
-					padding: var(--def-naga-btn-p-xs);
-				}
+			&.naga-btn-xs {
+				font-size: var(--def-naga-txt-xs);
+				padding: var(--def-naga-btn-p-xs);
+			}
 
-				&.naga-btn-sm {
-					font-size: var(--def-naga-txt-sm);
-					padding: var(--def-naga-btn-p-sm);
-				}
+			&.naga-btn-sm {
+				font-size: var(--def-naga-txt-sm);
+				padding: var(--def-naga-btn-p-sm);
+			}
 
-				&.naga-btn-lg {
-					font-size: var(--def-naga-txt-lg);
-					padding: var(--def-naga-btn-p-lg);
-				}
+			&.naga-btn-lg {
+				font-size: var(--def-naga-txt-lg);
+				padding: var(--def-naga-btn-p-lg);
+			}
 
-				&.naga-btn-full {
-					width: 100%;
-				}
+			&.naga-btn-full {
+				width: 100%;
 			}
 		}
   	`;
