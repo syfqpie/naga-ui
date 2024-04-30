@@ -13,6 +13,7 @@
 	},
 	"types": "./build/bundle.d.ts",
 	"scripts": {
+		"dev": "vite",
 		"analyze": "cem analyze --litelement --packagejson",
 		"start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
 		"build": "tsc && npm run analyze -- --exclude dist && rollup -c rollup.config.js",
@@ -29,6 +30,7 @@
 	"devDependencies": {
 		"@custom-elements-manifest/analyzer": "^0.9.8",
 		"@open-wc/testing": "^3.1.6",
+		"@remcovaes/web-test-runner-vite-plugin": "^1.2.1",
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-replace": "^5.0.5",
 		"@rollup/plugin-typescript": "^11.1.6",
@@ -43,9 +45,18 @@
 		"rollup": "^4.17.0",
 		"rollup-plugin-dts": "^6.1.0",
 		"rollup-plugin-summary": "^2.0.0",
+		"ts-lit-plugin": "^2.0.2",
 		"tslib": "^2.3.1",
 		"typescript": "^5.2.2",
 		"vitepress": "^1.1.4"
 	},
-	"customElements": "custom-elements.json"
+	"customElements": "custom-elements.json",
+	"nyc": {
+		"include": [
+			"src"
+		],
+		"exclude": [
+			"node_modules/*"
+		]
+	}
 }

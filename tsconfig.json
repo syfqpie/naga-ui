@@ -1,32 +1,55 @@
 {
   "compilerOptions": {
-    "target": "es2021",
-    "module": "es2020",
-    "lib": ["es2021", "DOM", "DOM.Iterable"],
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "inlineSources": true,
-    "outDir": "./dist",
+    "target": "ES2021",
+		"module": "ES2015",
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+		"outDir": "./dist",
     "rootDir": "./src",
+		"declaration": true,
+    "declarationMap": true,
+		"experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "skipLibCheck": true,
+		"sourceMap": true,
+    "inlineSources": true,
+
+    /* Bundler mode */
+    "moduleResolution": "node",
+		"noEmit": true,
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+
+    /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
+		"allowSyntheticDefaultImports": true,
+
+		/* Extras */
     "plugins": [
       {
         "name": "ts-lit-plugin",
         "strict": true
       }
-    ]
+    ],
+		"paths": {
+      "~/*": [
+        "./src/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": ["src/**/*.ts"],
-  "exclude": []
+	"exclude": [
+    "node_modules",
+    "build"
+  ]
 }
