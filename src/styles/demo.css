@@ -31,3 +31,19 @@ body {
 naga-button {
 	margin-bottom: 0.5em;
 }
+
+html[color-scheme="dark"] {
+	--naga-btn-bg-custom: red;
+}
+
+@media (prefers-color-scheme: light) {
+	html {
+		--naga-sandbox-bg: #FFFFFF;
+	}
+ }
+
+@media (prefers-color-scheme: dark) {
+	html {
+		--naga-sandbox-bg: rgb(27, 27, 31);
+	}
+ }

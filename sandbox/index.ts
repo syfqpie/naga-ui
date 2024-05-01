@@ -61,8 +61,7 @@ export class NagaSandbox extends LitElement {
 		}
 
 		.naga-sandbox {
-			/* background-color: rgb(27, 27, 31); */
-			background-color: white;
+			background-color: var(--naga-sandbox-bg);
 			height: 100vh;
 			width: 100vw;
 			font-size: 16px;
