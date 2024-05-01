@@ -2274,7 +2274,7 @@
     rollup "^4.4.0"
     whatwg-url "^11.0.0"
 
-"@web/dev-server@^0.4.0", "@web/dev-server@^0.4.4":
+"@web/dev-server@^0.4.0":
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/@web/dev-server/-/dev-server-0.4.4.tgz#c31ad8eaa9c7d5e74707140a5de5c4797531343c"
   integrity sha512-Gye0DhDbst/KVNRCFzRd+4V9LJmuuQYJBsf6UXeEbCYuBSKeshEW4AA1esLsfy1gONsD6NIGiru5509l35P9Ug==
