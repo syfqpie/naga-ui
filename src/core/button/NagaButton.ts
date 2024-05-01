@@ -12,7 +12,7 @@ import { Size, Sizes } from '../../types/common.ts'
  * @property {Boolean} isPill - set true if button should be pill look - the default is true
  * @property {Boolean} isFull - set true if button should be full width - the default is false
  * @property {Boolean} disabled - set true if button is in disabled state - the default is false
- * @property {(e: Event) => void} onClick - button callback when clicked
+ * @property {(e: Event) => void} onClick - on click event
  *
  * @example
  * ``` <naga-button @onClick="exampleFn()">
@@ -33,9 +33,6 @@ export class NagaButton extends LitElement {
 	/** @property {Boolean} disabled - set true if button is in disabled state - the default is false */
 	@property({ type: Boolean })
 	disabled: boolean = false
-	/** @property {(e: Event) => void} onClick - button callback when clicked */
-	@property({ attribute: false })
-	onClick: ((e: Event) => void) | undefined = undefined
 
 	override render() {
 		const classes = {
@@ -50,11 +47,17 @@ export class NagaButton extends LitElement {
 		return html`
 			<button
 				class='${classMap(classes)}'
-				@click="${this.onClick}"
+				@click=${this.emitEvent}
 				?disabled=${this.disabled}>
 				<slot></slot>
 			</button>
 		`
+	}
+
+	private async emitEvent() {
+		await this.updateComplete
+		const event = new CustomEvent('onClick', {bubbles: true, composed: true})
+		this.dispatchEvent(event)
 	}
 
 	static override styles =[
