@@ -15,7 +15,6 @@
 	"scripts": {
 		"dev": "vite",
 		"analyze": "cem analyze --litelement --packagejson",
-		"start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
 		"build": "tsc && npm run analyze -- --exclude dist && rollup -c rollup.config.js",
 		"prepublish": "tsc && npm run analyze -- --exclude dist",
 		"test": "tsc && wtr --coverage --node-resolve --playwright --browsers chromium firefox webkit",
