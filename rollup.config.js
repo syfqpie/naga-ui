@@ -6,7 +6,7 @@ import summary from 'rollup-plugin-summary';
 
 const config = [
 	{
-		input:'dist/index.js',
+		input:'src/index.ts',
 		output: {
 			file: './build/bundle.js',
 			format: 'esm',
@@ -28,7 +28,7 @@ const config = [
 		],
 	},
 	{
-		input: 'dist/index.d.ts',
+		input: 'build/dist/index.d.ts',
 		output: {
 			file: './build/bundle.d.ts',
 			format: 'es',
