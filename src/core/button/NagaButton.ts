@@ -1,13 +1,15 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import {classMap} from 'lit/directives/class-map.js';
 
 import mainStyle from '../../styles/main.ts'
-import { Size } from '../../types/common.ts'
+import { Size, Sizes } from '../../types/common.ts'
 
 /**
  * NagaButton
  *
  * @property {@link Size} size - size of button - the default is `md`
+ * @property {Boolean} isPill - set true if button should be pill look - the default is true
  * @property {Boolean} isFull - set true if button should be full width - the default is false
  * @property {Boolean} disabled - set true if button is in disabled state - the default is false
  * @property {(e: Event) => void} onClick - button callback when clicked
@@ -22,6 +24,9 @@ export class NagaButton extends LitElement {
 	/** @property {@link Size} size - size of button - the default is `md` */
 	@property({ type: String })
 	size: Size = 'md'
+	/** {Boolean} isPill - set true if button should be pill look - the default is true */
+	@property({ type: Boolean })
+	isPill: boolean = true
 	/** {Boolean} isFull - set true if button should be full width - the default is false */
 	@property({ type: Boolean })
 	isFull: boolean = false
@@ -32,28 +37,19 @@ export class NagaButton extends LitElement {
 	@property({ attribute: false })
 	onClick: ((e: Event) => void) | undefined = undefined
 
-	getCls() {
-		let cls = ''
-
-		if (this.size === 'xs') {
-			cls = 'naga-btn-xs'
-		} else if (this.size === 'sm') {
-			cls = 'naga-btn-sm'
-		} else if (this.size === 'lg') {
-			cls = 'naga-btn-lg'
-		}
-
-		if (this.isFull) {
-			cls = `${cls} naga-btn-full`
-		}
-
-		return cls
-	}
-
 	override render() {
+		const classes = {
+			'naga-btn': true,
+			'naga-btn-xs': this.size === Sizes.XS,
+			'naga-btn-sm': this.size === Sizes.SM,
+			'naga-btn-lg': this.size === Sizes.LG,
+			'naga-btn-full': this.isFull,
+			'naga-rounded-full': this.isPill,
+		}
+
 		return html`
 			<button
-				class="naga-btn ${ this.getCls() }"
+				class='${classMap(classes)}'
 				@click="${this.onClick}"
 				?disabled=${this.disabled}>
 				<slot></slot>
@@ -73,25 +69,27 @@ export class NagaButton extends LitElement {
 
 				--naga-txt-xs: 12px;
 				--naga-txt-sm: 14px;
-				--naga-txt-md: 16px;
-				--naga-txt-lg: 18px;
+				--naga-txt-md: 14px;
+				--naga-txt-lg: 16px;
 
-				--naga-btn-p-xs: 4px 12px;
-				--naga-btn-p-sm: 6px 14px;
-				--naga-btn-p-md: 8px 20px;
-				--naga-btn-p-lg: 10px 26px;
+				--naga-btn-p-xs: 8px 12px;
+				--naga-btn-p-sm: 8px 12px;
+				--naga-btn-p-md: 10px 20px;
+				--naga-btn-p-lg: 12px 22px;
 
 				display: block;
 			}
 			.naga-btn {
 				background-color: var(--naga-btn-bg);
 				border: none;
-				border-radius: 9999px;
+				border-radius: 8px;
 				color: var(--naga-btn-color);
 				cursor: pointer;
 				font-size: var(--naga-txt-md);
 				font-weight: var(--naga-font-weight-semibold);
+				line-height: 20px;
 				padding: var(--naga-btn-p-md);
+				transition: color 0.25s, background-color 0.25s, box-shadow 0.25s;
 			}
 			.naga-btn:not(:disabled):hover {
 				background-color: var(--naga-btn-bg-hovered);
@@ -105,6 +103,7 @@ export class NagaButton extends LitElement {
 				opacity: 0.3;
 			}
 			.naga-btn.naga-btn-xs {
+				line-height: 16px;
 				font-size: var(--naga-txt-xs);
 				padding: var(--naga-btn-p-xs);
 			}
@@ -113,11 +112,15 @@ export class NagaButton extends LitElement {
 				padding: var(--naga-btn-p-sm);
 			}
 			.naga-btn.naga-btn-lg {
+				line-height: 24px;
 				font-size: var(--naga-txt-lg);
 				padding: var(--naga-btn-p-lg);
 			}
 			.naga-btn.naga-btn-full {
 				width: 100%;
+			}
+			.naga-btn.naga-rounded-full {
+				border-radius: 9999px;
 			}
 		`
 	]
