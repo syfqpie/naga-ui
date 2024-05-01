@@ -67,7 +67,7 @@ export class NagaButton extends LitElement {
 				--naga-btn-bg: var(--naga-btn-bg-custom, var(--naga-primary-bg));
 				--naga-btn-bg-hovered: var(--naga-btn-bg-hovered-custom, var(--naga-primary-bg-hovered));
 				--naga-btn-bg-focused: var(--naga-btn-bg-focused-custom, var(--naga-primary-bg-focused));
-				--naga-btn-color: var(--naga-btn-color-custom, var(--naga-primary-color));
+				--naga-btn-color: var(--naga-btn-color-custom, var(--naga-primary-inversed));
 				--naga-btn-box-shadow: var(--naga-btn-box-shadow-custom, var(--naga-primary-box-shadow));
 
 				--naga-txt-xs: 12px;
