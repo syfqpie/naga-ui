@@ -1,7 +1,8 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { Size } from '../../types/common'
+import mainStyle from '../../styles/main.ts'
+import { Size } from '../../types/common.ts'
 
 /**
  * NagaButton
@@ -18,75 +19,6 @@ import { Size } from '../../types/common'
  */
 @customElement('naga-button')
 export class NagaButton extends LitElement {
-	static override styles = css`
-		:host {
-			--def-naga-btn-color: #FFFFFF;
-			--def-naga-btn-color-hovered: #FFFFFF;
-			--def-naga-btn-bg-color: #1F2937;
-			--def-naga-btn-bg-color-hovered: #374151;
-			--def-naga-btn-border-color: #4B5563;
-			--def-naga-btn-bg-color-active: var(--def-naga-btn-border-color);
-
-			--def-naga-txt-xs: 12px;
-			--def-naga-txt-sm: 14px;
-			--def-naga-txt-md: 16px;
-			--def-naga-txt-lg: 18px;
-
-			--def-naga-btn-p-xs: 4px 12px;
-			--def-naga-btn-p-sm: 6px 14px;
-			--def-naga-btn-p-md: 8px 20px;
-			--def-naga-btn-p-lg: 10px 26px;
-
-			display: block;
-		}
-
-		.naga-btn {
-			font-size: var(--def-naga-txt-md);
-			padding: var(--def-naga-btn-p-md);
-			color: var(--naga-btn-color, var(--def-naga-btn-color));
-			background-color: var(--naga-btn-bg-color, var(--def-naga-btn-bg-color));
-			border: 1px solid var(--naga-btn-border-color, var(--def-naga-btn-border-color));
-			border-radius: 9999px;
-			cursor: pointer;
-
-			&:not(:disabled):hover {
-				color: var(--naga-btn-color-hovered, var(--def-naga-btn-color-hovered));
-				background-color: var(--naga-btn-bg-color-hovered, var(--def-naga-btn-bg-color-hovered));
-			}
-
-			&:not(:disabled):active {
-				color: var(--naga-btn-color-hovered, var(--def-naga-btn-color-hovered));
-				background-color: var(--naga-btn-bg-color-active, var(--def-naga-btn-bg-color-active));
-			}
-
-			&:disabled {
-				color: #030712;
-				background-color: #6b7280;
-				cursor: not-allowed;
-				opacity: 0.5;
-			}
-
-			&.naga-btn-xs {
-				font-size: var(--def-naga-txt-xs);
-				padding: var(--def-naga-btn-p-xs);
-			}
-
-			&.naga-btn-sm {
-				font-size: var(--def-naga-txt-sm);
-				padding: var(--def-naga-btn-p-sm);
-			}
-
-			&.naga-btn-lg {
-				font-size: var(--def-naga-txt-lg);
-				padding: var(--def-naga-btn-p-lg);
-			}
-
-			&.naga-btn-full {
-				width: 100%;
-			}
-		}
-  	`;
-
 	/** @property {@link Size} size - size of button - the default is `md` */
 	@property({ type: String })
 	size: Size = 'md'
@@ -126,8 +58,69 @@ export class NagaButton extends LitElement {
 				?disabled=${this.disabled}>
 				<slot></slot>
 			</button>
-		`;
+		`
 	}
+
+	static override styles =[
+		mainStyle,
+		css`
+			:host {
+				--naga-btn-bg: var(--naga-btn-bg-custom, var(--naga-primary-bg));
+				--naga-btn-bg-hovered: var(--naga-btn-bg-hovered-custom, var(--naga-primary-bg-hovered));
+				--naga-btn-bg-focused: var(--naga-btn-bg-focused-custom, var(--naga-primary-bg-focused));
+				--naga-btn-color: var(--naga-btn-color-custom, var(--naga-primary-color));
+				--naga-btn-box-shadow: var(--naga-btn-box-shadow-custom, var(--naga-primary-box-shadow));
+
+				--naga-txt-xs: 12px;
+				--naga-txt-sm: 14px;
+				--naga-txt-md: 16px;
+				--naga-txt-lg: 18px;
+
+				--naga-btn-p-xs: 4px 12px;
+				--naga-btn-p-sm: 6px 14px;
+				--naga-btn-p-md: 8px 20px;
+				--naga-btn-p-lg: 10px 26px;
+
+				display: block;
+			}
+			.naga-btn {
+				background-color: var(--naga-btn-bg);
+				border: none;
+				border-radius: 9999px;
+				color: var(--naga-btn-color);
+				cursor: pointer;
+				font-size: var(--naga-txt-md);
+				font-weight: var(--naga-font-weight-semibold);
+				padding: var(--naga-btn-p-md);
+			}
+			.naga-btn:not(:disabled):hover {
+				background-color: var(--naga-btn-bg-hovered);
+			}
+			.naga-btn:not(:disabled):active {
+				background-color: var(--naga-btn-bg-focused);
+				box-shadow: var(--naga-btn-box-shadow);
+			}
+			.naga-btn:disabled {
+				cursor: not-allowed;
+				opacity: 0.3;
+			}
+			.naga-btn.naga-btn-xs {
+				font-size: var(--naga-txt-xs);
+				padding: var(--naga-btn-p-xs);
+			}
+			.naga-btn.naga-btn-sm {
+				font-size: var(--naga-txt-sm);
+				padding: var(--naga-btn-p-sm);
+			}
+			.naga-btn.naga-btn-lg {
+				font-size: var(--naga-txt-lg);
+				padding: var(--naga-btn-p-lg);
+			}
+			.naga-btn.naga-btn-full {
+				width: 100%;
+			}
+		`
+	]
 }
 
 declare global {
