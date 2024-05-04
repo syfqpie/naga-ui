@@ -19,6 +19,14 @@ export class NagaSandbox extends LitElement {
 			<div
 				class='${classMap(classes)}'>
 				<div class='naga-main'>
+					<naga-button size='sm' .isPill=${false} isSuccess>
+						Test
+					</naga-button>
+
+					<naga-button size='sm' .isPill=${false} isError>
+						Test
+					</naga-button>
+
 					<naga-button size='sm' .isPill=${false} @onClick=${testButton}>
 						Click me
 					</naga-button>
