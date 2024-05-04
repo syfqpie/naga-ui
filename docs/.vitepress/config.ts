@@ -5,7 +5,7 @@ export default defineConfig({
 	title: 'Naga UI',
 	description: 'A reusable web component design system',
 	head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
-	// appearance: false, // dark mode
+	appearance: false, // disable dark mode
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
