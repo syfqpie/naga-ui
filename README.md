@@ -42,5 +42,5 @@ Make sure you are in `main` branch and release note has been created first. Then
 yarn build
 
 # publish the naga
-yarn publish
+yarn npm publish
 ```
