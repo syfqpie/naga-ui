@@ -32,3 +32,15 @@ To run the tests in interactive watch mode run:
 ```bash
 yarn run test:watch
 ```
+
+## Publishing
+
+Make sure you are in `main` branch and release note has been created first. Then run:
+
+```bash
+# build the package
+yarn build
+
+# publish the naga
+yarn publish
+```
