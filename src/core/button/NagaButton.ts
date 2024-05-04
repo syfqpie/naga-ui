@@ -11,6 +11,8 @@ import { Size, Sizes } from '../../types/common.ts'
  * @property {@link Size} size - size of button - the default is `md`
  * @property {Boolean} isPill - set true if button should be pill look - the default is true
  * @property {Boolean} isFull - set true if button should be full width - the default is false
+ * @property {Boolean} isSuccess - set true if button should be in success state - the default is false
+ * @property {Boolean} isError - set true if button should be in error state - the default is false
  * @property {Boolean} disabled - set true if button is in disabled state - the default is false
  * @property {(e: Event) => void} onClick - on click event
  *
@@ -30,6 +32,12 @@ export class NagaButton extends LitElement {
 	/** {Boolean} isFull - set true if button should be full width - the default is false */
 	@property({ type: Boolean })
 	isFull: boolean = false
+	/** {Boolean} isSuccess - set true if button should be in success state - the default is false */
+	@property({ type: Boolean })
+	isSuccess: boolean = false
+	/** {Boolean} isError - set true if button should be in error state - the default is false */
+	@property({ type: Boolean })
+	isError: boolean = false
 	/** @property {Boolean} disabled - set true if button is in disabled state - the default is false */
 	@property({ type: Boolean })
 	disabled: boolean = false
@@ -42,6 +50,8 @@ export class NagaButton extends LitElement {
 			'naga-btn-lg': this.size === Sizes.LG,
 			'naga-btn-full': this.isFull,
 			'naga-rounded-full': this.isPill,
+			'naga-btn-success': this.isSuccess,
+			'naga-btn-error': this.isError,
 		}
 
 		return html`
@@ -70,6 +80,18 @@ export class NagaButton extends LitElement {
 				--naga-btn-color: var(--naga-btn-color-custom, var(--naga-primary-inversed));
 				--naga-btn-box-shadow: var(--naga-btn-box-shadow-custom, var(--naga-primary-box-shadow));
 
+				--naga-btn-bg-success: var(--naga-btn-bg-success-custom, var(--naga-success-bg));
+				--naga-btn-bg-hovered-success: var(--naga-btn-bg-hovered-success-custom, var(--naga-success-bg-hovered));
+				--naga-btn-bg-focused-success: var(--naga-btn-bg-focused-success-custom, var(--naga-success-bg-focused));
+				--naga-btn-color-success: var(--naga-btn-color-success-custom, var(--naga-success-inversed));
+				--naga-btn-box-shadow-success: var(--naga-btn-box-shadow-success-custom, var(--naga-success-box-shadow));
+
+				--naga-btn-bg-error: var(--naga-btn-bg-error-custom, var(--naga-error-bg));
+				--naga-btn-bg-hovered-error: var(--naga-btn-bg-hovered-error-custom, var(--naga-error-bg-hovered));
+				--naga-btn-bg-focused-error: var(--naga-btn-bg-focused-error-custom, var(--naga-error-bg-focused));
+				--naga-btn-color-error: var(--naga-btn-color-error-custom, var(--naga-error-inversed));
+				--naga-btn-box-shadow-error: var(--naga-btn-box-shadow-error-custom, var(--naga-error-box-shadow));
+
 				--naga-txt-xs: 12px;
 				--naga-txt-sm: 14px;
 				--naga-txt-md: 14px;
@@ -89,7 +111,7 @@ export class NagaButton extends LitElement {
 				color: var(--naga-btn-color);
 				cursor: pointer;
 				font-size: var(--naga-txt-md);
-				font-weight: var(--naga-font-weight-semibold);
+				font-weight: var(--naga-font-weight-bold);
 				line-height: 20px;
 				padding: var(--naga-btn-p-md);
 				transition: color 0.25s, background-color 0.25s, box-shadow 0.25s;
@@ -124,6 +146,30 @@ export class NagaButton extends LitElement {
 			}
 			.naga-btn.naga-rounded-full {
 				border-radius: 9999px;
+			}
+
+			.naga-btn.naga-btn-success {
+				background-color: var(--naga-btn-bg-success);
+				color: var(--naga-btn-color-success);
+			}
+			.naga-btn.naga-btn-success:not(:disabled):hover {
+				background-color: var(--naga-btn-bg-hovered-success);
+			}
+			.naga-btn.naga-btn-success:not(:disabled):active {
+				background-color: var(--naga-btn-bg-focused-success);
+				box-shadow: var(--naga-btn-box-shadow-success);
+			}
+
+			.naga-btn.naga-btn-error {
+				background-color: var(--naga-btn-bg-error);
+				color: var(--naga-btn-color-error);
+			}
+			.naga-btn.naga-btn-error:not(:disabled):hover {
+				background-color: var(--naga-btn-bg-hovered-error);
+			}
+			.naga-btn.naga-btn-error:not(:disabled):active {
+				background-color: var(--naga-btn-bg-focused-error);
+				box-shadow: var(--naga-btn-box-shadow-error);
 			}
 		`
 	]
