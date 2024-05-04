@@ -188,3 +188,24 @@
 .mtop {
 	margin-top: 0.5em;
 }
+
+/* TODO: Update to follow system's styling */
+.dark {
+	--naga-btn-bg-custom: #E2E8F0;
+	--naga-btn-bg-hovered-custom: rgba(203, 213, 225, 0.9);
+	--naga-btn-bg-focused-custom: rgba(203, 213, 225, 1);
+	--naga-btn-color-custom: rgba(15, 23, 42, 1);
+	--naga-btn-box-shadow-custom: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(241, 245, 249, 0.4) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+	--naga-btn-bg-success-custom: rgba(22, 163, 74, 0.3);
+	--naga-btn-bg-hovered-success-custom: rgba(22, 163, 74, 0.3);
+	--naga-btn-bg-focused-success-custom: rgba(22, 163, 74, 0.35);
+	--naga-btn-color-success-custom: rgba(22, 163, 74, 1);
+	--naga-btn-box-shadow-success-custom: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(22, 163, 74, 0.2) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+	--naga-btn-bg-error-custom: rgba(220, 38, 38, 0.3);
+	--naga-btn-bg-hovered-error-custom: rgba(220, 38, 38, 0.3);
+	--naga-btn-bg-focused-error-custom: rgba(220, 38, 38, 0.35);
+	--naga-btn-color-error-custom: rgba(220, 38, 38, 1);
+	--naga-btn-box-shadow-error-custom: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(220, 38, 38, 0.2) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
