@@ -1,1 +1,1 @@
-export { NagaButton } from './core/button/NagaButton'
+export { NagaButton } from './core/NagaButton.ts'

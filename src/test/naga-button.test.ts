@@ -1,8 +1,8 @@
 import { html } from 'lit'
 import { fixture, expect } from '@open-wc/testing'
 
-import { NagaButton } from '../core/button/NagaButton.ts'
-import '../core/button/NagaButton.ts'
+import { NagaButton } from '../core/NagaButton.ts'
+import '../core/NagaButton.ts'
 
 describe('NagaButton', () => {
 	it('has a slot text', async () => {
