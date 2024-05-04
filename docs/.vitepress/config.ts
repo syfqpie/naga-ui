@@ -5,6 +5,7 @@ export default defineConfig({
 	title: 'Naga UI',
 	description: 'A reusable web component design system',
 	head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+	// appearance: false, // dark mode
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
@@ -31,5 +32,12 @@ export default defineConfig({
 		socialLinks: [
 			{ icon: 'github', link: 'https://github.com/syfqpie/naga-ui' }
 		]
+	},
+	vue: {
+		template: {
+			compilerOptions: {
+				isCustomElement: (tag: string) => tag.startsWith('naga-'),
+			}
+		}
 	}
 })
