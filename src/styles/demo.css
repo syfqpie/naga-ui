@@ -3,9 +3,9 @@
 	line-height: 1.5;
 	font-weight: 400;
 
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	color-scheme: light;
+	color: #242424;
+	background-color: rgba(255, 255, 255, 0.87);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -24,4 +24,37 @@ body {
 	margin: 0 auto;
 	padding: 2rem;
 	text-align: center;
+}
+
+naga-button {
+	margin-bottom: 0.5em;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--naga-sandbox-bg: #FFFFFF;
+	}
+ }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--naga-sandbox-bg: rgb(27, 27, 31);
+		--naga-btn-bg-custom: #E2E8F0;
+		--naga-btn-bg-hovered-custom: rgba(203, 213, 225, 0.9); /** #CBD5E1E6 */
+		--naga-btn-bg-focused-custom: rgba(203, 213, 225, 1); /** #CBD5E1 */
+		--naga-btn-color-custom: rgba(15, 23, 42, 1);
+		--naga-btn-box-shadow-custom: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(241, 245, 249, 0.4) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+		--naga-btn-bg-success-custom: rgba(22, 163, 74, 0.3);
+		--naga-btn-bg-hovered-success-custom: rgba(22, 163, 74, 0.3);
+		--naga-btn-bg-focused-success-custom: rgba(22, 163, 74, 0.35);
+		--naga-btn-color-success-custom: rgba(22, 163, 74, 1);
+		--naga-btn-box-shadow-success-custom: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(22, 163, 74, 0.2) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+		--naga-btn-bg-error-custom: rgba(220, 38, 38, 0.3);
+		--naga-btn-bg-hovered-error-custom: rgba(220, 38, 38, 0.3);
+		--naga-btn-bg-focused-error-custom: rgba(220, 38, 38, 0.35);
+		--naga-btn-color-error-custom: rgba(220, 38, 38, 1);
+		--naga-btn-box-shadow-error-custom: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(220, 38, 38, 0.2) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+	}
 }

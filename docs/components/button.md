@@ -9,7 +9,6 @@ import { NagaButton } from 'naga-ui'
 ```
 
 <script setup>
-// import '../../build/bundle.js'
 import { onMounted } from 'vue'
 onMounted(async() => {
 	await import('../../build/bundle.js')
@@ -133,6 +132,57 @@ There are 4 variants of button sizes avaiable: `xs` | `sm` | `md` | `lg`
 </naga-button>
 ```
 
+## Pill button
+
+By default, button is set to have the `pill` look. Can toggle this by passing `boolean` value to `isPill` attribute
+
+<div class="component-display-block mtop">
+	<naga-button .isPill="false">
+		Hello world
+	</naga-button>
+	<naga-button .isPill="true">
+		Hello world
+	</naga-button>
+</div>
+
+```html
+<naga-button :isPill="false">
+	Hello world
+</naga-button>
+```
+
+## Error state
+
+Toggle error state by passing `boolean` value to `isError` attribute. Default to `false`
+
+<div class="component-display-block mtop">
+	<naga-button .isPill="false" .isError="true">
+		Hello world
+	</naga-button>
+</div>
+
+```html
+<naga-button :isError="true">
+	Hello world
+</naga-button>
+```
+
+## Success state
+
+Toggle success state by passing `boolean` value to `isSuccess` attribute. Default to `false`
+
+<div class="component-display-block mtop">
+	<naga-button .isPill="false" .isSuccess="true">
+		Hello world
+	</naga-button>
+</div>
+
+```html
+<naga-button :isSuccess="true">
+	Hello world
+</naga-button>
+```
+
 ## Full width
 
 We can toggle full width style by passing `boolean` value to `isFull` attribute
@@ -166,12 +216,12 @@ We can toggle full width style by passing `boolean` value to `isFull` attribute
 </naga-button>
 ```
 
-### onClick callback
+### onClick event
 
 We have a callback props for click event
 
 ```html
-<naga-button :onClick="doClickEvent()">
+<naga-button @onClick="doClickEvent()">
 	Hello world
 </naga-button>
 ```
@@ -182,11 +232,22 @@ We can change the button styling by overriding these css variables
 
 ```css
 :root {
-	--naga-btn-color: #FFFFFF;
-	--naga-btn-color-hovered: #FFFFFF;
-	--naga-btn-bg-color: #1F2937;
-	--naga-btn-bg-color-hovered: #374151;
-	--naga-btn-border-color: #4B5563;
-	--naga-btn-bg-color-active: var(--naga-btn-border-color);
+	--naga-btn-color-custom: #FFFFFF;
+	--naga-btn-bg-custom: #0F172A;
+	--naga-btn-bg-hovered-custom: #020617CC;
+	--naga-btn-bg-focused-custom: #020617;
+	--naga-btn-box-shadow-custom: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(15, 23, 42, 0.2) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+	--naga-btn-bg-success-custom: #22C55E;
+	--naga-btn-bg-hovered-success-custom: #16A34AB3;
+	--naga-btn-bg-focused-success-custom: #16A34AE6;
+	--naga-btn-color-success-custom: #FFF;
+	--naga-btn-box-shadow-success-custom: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(22, 163, 74, 0.2) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+	--naga-btn-bg-error-custom: #EF4444;
+	--naga-btn-bg-hovered-error-custom: #DC2626B3;
+	--naga-btn-bg-focused-error-custom: #DC2626E6;
+	--naga-btn-color-error-custom: #FFF;
+	--naga-btn-box-shadow-error-custom: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(220, 38, 38, 0.2) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
 }
 ```
