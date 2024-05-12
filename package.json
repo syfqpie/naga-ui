@@ -19,7 +19,7 @@
 	"scripts": {
 		"dev": "vite",
 		"analyze": "cem analyze --litelement --packagejson",
-		"build": "tsc && npm run analyze -- --exclude dist && rollup -c rollup.config.js",
+		"build": "tsc && npm run analyze -- --exclude dist && rollup -c rollup.config.js && wca analyze \"./build/bundle.d.ts\" --format vscode --outFile ./build/naga-ui.html-data.json",
 		"prepublish": "tsc && npm run analyze -- --exclude dist",
 		"test": "tsc && wtr --coverage --node-resolve --playwright --browsers chromium firefox webkit",
 		"test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch --coverage --node-resolve --playwright --browsers chromium firefox webkit\"",
@@ -50,7 +50,8 @@
 		"ts-lit-plugin": "^2.0.2",
 		"tslib": "^2.3.1",
 		"typescript": "^5.2.2",
-		"vitepress": "^1.1.4"
+		"vitepress": "^1.1.4",
+		"web-component-analyzer": "^2.0.0"
 	},
 	"customElements": "custom-elements.json",
 	"nyc": {
