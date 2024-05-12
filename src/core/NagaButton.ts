@@ -1,20 +1,18 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import {classMap} from 'lit/directives/class-map.js';
+import {classMap} from 'lit/directives/class-map.js'
 
 import mainStyle from '../styles/main.ts'
 import { Size, Sizes } from '../types/common.ts'
 
 /**
- * NagaButton
+ * A button component
  *
- * @property {@link Size} size - size of button - the default is `md`
- * @property {Boolean} isPill - set true if button should be pill look - the default is true
- * @property {Boolean} isFull - set true if button should be full width - the default is false
- * @property {Boolean} isSuccess - set true if button should be in success state - the default is false
- * @property {Boolean} isError - set true if button should be in error state - the default is false
- * @property {Boolean} disabled - set true if button is in disabled state - the default is false
- * @property {(e: Event) => void} onClick - on click event
+ * @element naga-button
+ *
+ * @fires onClick - on click event
+ *
+ * @slot default - content slot
  *
  * @example
  * ``` <naga-button @onClick="exampleFn()">
@@ -23,22 +21,57 @@ import { Size, Sizes } from '../types/common.ts'
  */
 @customElement('naga-button')
 export class NagaButton extends LitElement {
-	/** @property {@link Size} size - size of button - the default is `md` */
+	/**
+	 * Size of button
+	 * @type {'xs'|'sm'|'md'|'lg'}
+	 * @attr
+	 * @default 'md'
+	 */
 	@property({ type: String })
 	size: Size = 'md'
-	/** {Boolean} isPill - set true if button should be pill look - the default is true */
+
+	/**
+	 * Either button should be in pill or not
+	 * @type {Boolean}
+	 * @attr
+	 * @default true
+	 */
 	@property({ type: Boolean })
 	isPill: boolean = true
-	/** {Boolean} isFull - set true if button should be full width - the default is false */
+
+	/**
+	 * Either button should be in full size or not
+	 * @type {Boolean}
+	 * @attr
+	 * @default true
+	 */
 	@property({ type: Boolean })
 	isFull: boolean = false
-	/** {Boolean} isSuccess - set true if button should be in success state - the default is false */
+
+	/**
+	 * Either button should be in success state or not
+	 * @type {Boolean}
+	 * @attr
+	 * @default true
+	 */
 	@property({ type: Boolean })
 	isSuccess: boolean = false
-	/** {Boolean} isError - set true if button should be in error state - the default is false */
+
+	/**
+	 * Either button should be in error state or not
+	 * @type {Boolean}
+	 * @attr
+	 * @default true
+	 */
 	@property({ type: Boolean })
 	isError: boolean = false
-	/** @property {Boolean} disabled - set true if button is in disabled state - the default is false */
+
+	/**
+	 * Either button should be in disabled state or not
+	 * @type {Boolean}
+	 * @attr
+	 * @default true
+	 */
 	@property({ type: Boolean })
 	disabled: boolean = false
 
@@ -70,7 +103,7 @@ export class NagaButton extends LitElement {
 		this.dispatchEvent(event)
 	}
 
-	static override styles =[
+	static override styles = [
 		mainStyle,
 		css`
 			:host {
